@@ -1,10 +1,10 @@
 import requests
 
-def get_ip():
+def get_ip(): # Retrieve IP Address of the user
     response = requests.get('https://api64.ipify.org?format=json').json()
     return response["ip"]
 
-def get_location():
+def get_location(): # Retrieve information from the IP of user
     ip_address = get_ip()
     response = requests.get(f'https://ipapi.co/{ip_address}/json/').json()
     location_data = {
@@ -16,10 +16,12 @@ def get_location():
         "Country Code": response.get("country_code"),
         "ISP": response.get("org"),
         "ASN": response.get("asn")
-    }
+    } 
+    # more data from
+    # https://www.freecodecamp.org/news/how-to-get-location-information-of-ip-address-using-python/
     return location_data
 
-res = get_location()
+res = get_location() # Save the information to a variable (dictionary datatype)
 
-for x, y in res.items():
+for x, y in res.items(): # loop the information to be display cleanly
     print(f"{x}: {y}")
