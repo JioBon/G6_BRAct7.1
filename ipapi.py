@@ -6,7 +6,7 @@ def get_ip(): # Retrieve IP Address of the user
 
 def get_location(): # Retrieve information from the IP of user
     ip_address = get_ip()
-    response = requests.get(f'https://ipapi.co/{ip_address}/json/').json()
+    response = requests.get("https://ipapi.co/{}/json/".format(ip_address)).json()
     location_data = {
         "IP Address": ip_address,
         "Version": response.get("version"),
@@ -23,8 +23,8 @@ def get_location(): # Retrieve information from the IP of user
     
     return location_data
 
-res = get_location() # Save the information to a variable (dictionary datatype)
-assert len(res) == 9, "Data Should have 9 output"
+if __name__ == "__main__":
+    res = get_location() # Save the information to a variable (dictionary datatype)
 
-for x, y in res.items(): # loop the information to be display cleanly
-    print(f"{x}: {y}")
+    for x, y in res.items(): # loop the information to be display cleanly
+        print("{}: {}".fosrmat(x, y))
