@@ -20,9 +20,11 @@ def get_location(): # Retrieve information from the IP of user
     } 
     # more data from
     # https://www.freecodecamp.org/news/how-to-get-location-information-of-ip-address-using-python/
+    
     return location_data
 
 res = get_location() # Save the information to a variable (dictionary datatype)
+assert len(res) == 9, "Data Should have 9 output"
 
 for x, y in res.items(): # loop the information to be display cleanly
     print(f"{x}: {y}")
