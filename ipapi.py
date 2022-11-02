@@ -15,7 +15,8 @@ def get_location(): # Retrieve information from the IP of user
         "Country": response.get("country_name"),
         "Country Code": response.get("country_code"),
         "ISP": response.get("org"),
-        "ASN": response.get("asn")
+        "ASN": response.get("asn"),
+        "Currency": response.get("currency")
     } 
     # more data from
     # https://www.freecodecamp.org/news/how-to-get-location-information-of-ip-address-using-python/
