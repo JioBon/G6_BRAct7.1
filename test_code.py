@@ -4,4 +4,4 @@ def get_length():
     return len(get_location())
 
 def test_length():
-    assert get_length == 9
+    assert get_length() == 9
